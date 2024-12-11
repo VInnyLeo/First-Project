@@ -1,7 +1,9 @@
+import useUser from "../hooks/useUser"
+import UserRow from "./UserRow";
 
 export default function UserPage() {
 
-   const [users, setusers] = userUser();
+  const {users} = useUser();
 
   return (
     <>
@@ -14,13 +16,9 @@ export default function UserPage() {
             </thead>
 
             <tbody>
-                {users.map( user=>{
-                    <tr>
-                        <td>
-                            <img src={user.avatar}
-                        </td>
-                    </tr>
-                })}
+                {users.map( user=>(                    
+                    <UserRow key={user.id} user={user}/>
+                ))}
             </tbody>
         </table>
       

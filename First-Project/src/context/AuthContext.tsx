@@ -9,7 +9,8 @@ enum StateTest {
 
 interface AuthState{
     state: StateTest;
-    loginEmailWithPassword: (mail: string, password: string) => void
+    loginEmailWithPassword: (mail: string, password: string) => void;
+    logOut: () => void
 }
 
 //es como una tienda, debe ser exportable para poder usarlo 
@@ -20,11 +21,11 @@ export const useAuthContext = () => useContext(AuthContext)
 export const AuthProvider = ({children}:PropsWithChildren) => {
 
     const [state, setstate] = useState(StateTest.checking);
-
+    //funcion para simular login, ojo que tambien se debe poner los parametros arriba AuthState
     const loginEmailWithPassword = (email: string, password: string) => {
         setstate(StateTest.login)
     }
-
+    //nunca olvidarse de llamar o declarar arriba
     const logOut = () => {
         setstate(StateTest.closed)
     }
