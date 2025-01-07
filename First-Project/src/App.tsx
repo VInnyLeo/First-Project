@@ -6,6 +6,8 @@ import Counter from './components/Counter'
 import { AuthProvider } from './context/AuthContext'
 import LoginPage from './components/LoginPage'
 import UserPage from './components/UserPage'
+import LoginFormPage from './components/LoginFormPage'
+
 function App() {
 
   return (
@@ -19,7 +21,8 @@ function App() {
           {/*<BasicFunctions/>*/}
           {/*<Counter />*/}
           {/*<LoginPage/>*/}
-          <UserPage/>
+          {/*<UserPage/>*/}
+          <LoginFormPage></LoginFormPage>
         </div>
       </AuthProvider>
     </>
